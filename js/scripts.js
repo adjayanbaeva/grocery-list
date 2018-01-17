@@ -15,6 +15,12 @@ $(document).ready(function () {
 
     sortedList.sort();
 
-    document.write(sortedList);
+    var upperCaseList = function (sortedList) {
+      return sortedList.toUpperCase();
+    }
+
+    var capitalizedList = sortedList.map(upperCaseList);
+
+    document.write(capitalizedList);
   });
 });
