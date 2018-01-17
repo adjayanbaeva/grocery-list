@@ -14,16 +14,15 @@ $(document).ready(function () {
       // and assign user input to var item.
       var item = $("input#" + groceryItem).val();
 
-      // call thr class from the HTML form-group and output to form
-      $("." + groceryItem).text(item);
 
-      // 4. push the user input to the emoty array created in step 3.
+
+      // 4. push the user input to the empty array created in step 3.
       sortedList.push(item);
 
       // 5. close forEach Loop
     });
 
-    // 6. sorted the array created in step 3.
+    // 6. sort the array created in step 3.
     sortedList.sort();
 
     // 7. create a function to return the sortedList as all upper case.
@@ -35,6 +34,16 @@ $(document).ready(function () {
     var capitalizedList = sortedList.map(upperCaseList);
 
     // print to document.
-    document.write(capitalizedList);
+    // document.write(capitalizedList);
+
+    // 9. create another forEach loop to append the items in the capitalizedList to the "#list" in the HTML
+    capitalizedList.forEach (function (item) {
+      // 10. capitalized and sorted items will be sent to <ul> tags in HTML
+      $("#list").append("<li>" + item + "</li>");
+    })
+
+    // 11. Print output.
+    $("#initially-showing").hide();
+    $("#output").show();
   });
 });
